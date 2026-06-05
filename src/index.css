@@ -1,0 +1,71 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Plus Jakarta Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", sans-serif;
+  --font-mono: "JetBrains Mono", monospace;
+
+  /* Brand Colors */
+  --color-brand-primary: #0093D5;
+  --color-brand-secondary: #00B5FF;
+  --color-brand-dark: #0B1220;
+  --color-brand-darker: #050811;
+  --color-brand-light: #F8FAFC;
+  --color-brand-card: #131F37;
+  --color-brand-border: #1E2E4E;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: var(--font-sans);
+    background-color: var(--color-brand-darker);
+    color: var(--color-brand-light);
+  }
+
+  body {
+    overflow-x: hidden;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--color-brand-darker);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--color-brand-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-brand-primary);
+}
+
+/* Glassmorphism utility */
+.glass-panel {
+  background: rgba(19, 31, 55, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(30, 46, 78, 0.5);
+}
+
+.glass-header {
+  background: rgba(5, 8, 17, 0.85);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(30, 46, 78, 0.4);
+}
+
+/* Hero animated gradient glow card */
+.glow-spot {
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(0, 147, 213, 0.15) 0%, rgba(0, 181, 255, 0.02) 60%, transparent 100%);
+  filter: blur(80px);
+  pointer-events: none;
+}
